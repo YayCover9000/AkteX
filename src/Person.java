@@ -46,6 +46,7 @@ public class Person {
         return hashCode(this.firstName, this.lastName, this.age);
     }*/
     //Java Standard Methode
+   @Override
     public String toString () {
         return "firstName: " + firstName + " lastName: " + lastName + " age: " + age;
     }
