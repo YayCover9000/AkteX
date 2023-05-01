@@ -26,8 +26,7 @@ public class Money extends Person {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-        if (!(obj instanceof Money)) return false;
-        Money otherCastMoney = (Money) obj;
+        if (!(obj instanceof Money otherCastMoney)) return false;
         boolean currencyEquals = (this.currency == null && otherCastMoney.currency == null) || (this.currency != null && this.currency.equals(otherCastMoney.currency));
         return this.amount == otherCastMoney.amount && currencyEquals;
     }
@@ -38,6 +37,11 @@ public class Money extends Person {
     @Override
     public String toString() {
         return super.toString() + " " + "Hat: " + this.amount + " " + this.currency + " auf dem Konto.";
+    }
+    @Override
+    public Person clone() {
+        Money neueMoney = new Money();
+        return super.clone();
     }
 
 }
