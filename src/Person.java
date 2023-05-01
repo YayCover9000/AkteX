@@ -1,13 +1,17 @@
+import java.util.Objects;
 public class Person {
-    private String firstName;
-    private String lastName;
-    private int age;
+    protected String firstName;
+    protected String lastName;
+    protected int age;
 
 
     public Person(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+    }
+    public Person () {
+        this(null, null, 0);
     }
 
 //Java Standard Methode
@@ -30,8 +34,20 @@ public class Person {
     }
 
    //Java Standard Methode
-    public int hashCode(String firstName, String lastName, int age) {
+   /* public int hashCode (String firstName, String lastName, int age) {
+        return firstName.hashCode() + lastName.hashCode() + age;
+    }
+    */
+    public int hashCode (String firstName, String lastName, int age) {
+        return Objects.hash(firstName,firstName,age);
+    }
+
+    /*public int hashCode(String firstName, String lastName, int age) {
         return hashCode(this.firstName, this.lastName, this.age);
+    }*/
+    //Java Standard Methode
+    public String toString () {
+        return "firstName: " + firstName + " lastName: " + lastName + " age: " + age;
     }
 
     public void setFirstName(String firstName) {
