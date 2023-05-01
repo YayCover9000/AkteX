@@ -35,6 +35,7 @@ public class Money extends Person {
     public int hashCode() {
         return this.amount + (this.currency == null ? 0 : this.currency.hashCode());
     }
+    @Override
     public String toString() {
         return super.toString() + " " + "Hat: " + this.amount + " " + this.currency + " auf dem Konto.";
     }

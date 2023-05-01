@@ -1,6 +1,7 @@
-import javax.security.auth.login.AccountLockedException;
+
 
 public class Main {
+    //Commit der Frage
     public static void main(String[] args) {
 /*
         Money income = new Money(100, "EUR");
@@ -9,7 +10,8 @@ public class Main {
         System.out.println("Balance: " + balance);*/
 
         Money eineZahl = new Money("jp", "ep", 4,100, "EUR");
-        System.out.println(eineZahl.toString());
+        System.out.println(eineZahl);
+
 
 
        Professor prof = new Professor("John", "Dummy", 20, 1000, "EUR", "Informatik", 100, "EUR");
