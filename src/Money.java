@@ -2,6 +2,9 @@ public class Money extends Person {
     private int amount;
     private String currency;
 
+
+
+
     public Money(String firstname, String lastname, int age, int amount, String currency) {
         super(firstname, lastname, age);
         this.amount = amount;
@@ -10,6 +13,7 @@ public class Money extends Person {
     public Money() {
         this(null, null, 0, 0, null);
     }
+
     public int getAmount() {
         return this.amount;
     }

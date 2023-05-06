@@ -1,4 +1,6 @@
-public class Professor extends Money  {
+public class Professor extends Money {
+
+
     private String fachgebiet;
     private int gehalt;
     private  String currency2;

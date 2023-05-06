@@ -4,6 +4,37 @@ public class Student extends Money {
     private Student[] studenten;
     private int index;
     private final static int MAX_STUDENTEN = 10;
+    private Money[] loan;
+    private int loanIndex;
+    private final static int MAX_LOAN = 10;
+    private static int nextLoan;
+
+    public void addLoan(Money money) {
+        if (loan != null) {
+            if (index < MAX_LOAN) {
+                loan[index] = money;
+                index++;
+            }
+        }
+    }
+    public void deleteLoan() {
+        if (loan != null) {
+            if (index > 0) {
+                loan[index - 1] = null;
+                index--;
+            } else if (index == 0) {
+                loan[index] = null;
+            }
+        }
+    }
+    public Money getLoan(int index) {
+        if (loan != null) {
+            if (index >= 0 && index < MAX_LOAN) {
+                return loan[index];
+            }
+        }
+        return null;
+    }
 
     public Student (String firstname, String lastname, int age, int amount, String currency, String studiengang, int matrikelnummer){
         super(firstname, lastname, age, amount, currency);
@@ -13,8 +44,11 @@ public class Student extends Money {
         index = 0;
 
     }
+
     public Student() {
         this(null, null, 0, 0, null, null, 0);
+        loan = new Money[MAX_LOAN];
+        index = 0;
     }
     //Objektverwaltung
     public void addStudent (Student student) {
@@ -64,7 +98,24 @@ public class Student extends Money {
         if (o == null) return false;
         if (this.getClass() != o.getClass()) return false;
         Student otherCastStudent = (Student) o;
-        return super.equals(o) && this.studiengang.equals(otherCastStudent.studiengang) && (this.matrikelnummer == otherCastStudent.matrikelnummer);
+        return super.equals(o) && this.studiengang.equals(otherCastStudent.studiengang) && this.matrikelnummer == otherCastStudent.matrikelnummer;
+    }
+
+    public Money[] getLoan() {
+        return loan;
+    }
+
+    public static int getMaxLoan() {
+        return MAX_LOAN;
+    }
+    public void setLoan(Money[] loan) {
+        this.loan = loan;
+    }
+    public int getLoanIndex() {
+        return loanIndex;
+    }
+    public int getNumberOfLoans() {
+        return loanIndex;
     }
 
     public String getStudiengang() {

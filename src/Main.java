@@ -16,6 +16,8 @@ public class Main {
     printPerson(prof);
     printPerson(profJapanisch);
     printPerson(yassuan);
+    System.out.println(yassuan.hashCode());
+
 
     }
     public static void printPerson(Person person) {
